@@ -1,4 +1,4 @@
-const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL;
+const githubUrl = process.env.NEXT_PUBLIC_GITHUB_URL ?? "https://github.com/ForzaItalia7/Audio-Notes";
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 const flow = [

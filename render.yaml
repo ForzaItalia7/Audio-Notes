@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: audio-notes-api
+    runtime: python
+    plan: free
+    region: frankfurt
+    branch: main
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: GNANI_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: FRONTEND_ORIGINS
+        sync: false
+      - key: AUDIO_BUCKET
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_REGION
+        value: eu-north-1
+      - key: S3_ENDPOINT_URL
+        value: https://s3.eu-north-1.amazonaws.com
+      - key: MAX_UPLOAD_SIZE_BYTES
+        value: "2147483648"

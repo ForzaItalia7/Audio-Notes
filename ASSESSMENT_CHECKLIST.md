@@ -6,7 +6,7 @@ local app proves from what must be completed before submitting a deployed URL.
 | PDF requirement | Current evidence | Status before deployment |
 | --- | --- | --- |
 | Upload an audio file; comfortably support at least 2 minutes | Generated 120-second WAV was uploaded successfully and was 3.84 MB. Browser recording was not exercised, per the user's instruction. | **Core flow verified; browser recording not verified.** |
-| Any audio length or size | Private S3-compatible storage and short-lived Gnani cloud-storage URLs are implemented. With the bucket configured, uploads default to a 2 GB size cap. Without it, upload size is capped at 10 MB to match Gnani's direct-upload path. Gnani documents a 4-hour duration ceiling. | **Implementation ready; not verified against a configured cloud bucket.** No service can accept literally unlimited duration. |
+| Any audio length or size | Private Amazon S3-compatible storage and short-lived Gnani cloud-storage URLs are implemented. With the bucket configured, uploads default to a 2 GB size cap. Without it, upload size is capped at 10 MB to match Gnani's direct-upload path. Gnani documents a 4-hour duration ceiling. | **Implementation ready; not verified against a configured cloud bucket.** No service can accept literally unlimited duration. |
 | Transcribe using Gnani ASR | A synthetic 120-second recording completed transcription; result persisted in PostgreSQL. | **Complete for direct files within current limit.** |
 | Display transcript | Transcript appears in upload history; copy and text download controls exist. | **Complete locally.** |
 | Display an LLM-generated summary | Gemini generated and saved structured notes from the test transcript. | **Complete locally.** |

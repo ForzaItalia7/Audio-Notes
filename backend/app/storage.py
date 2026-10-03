@@ -18,7 +18,7 @@ def configuration():
     endpoint = os.getenv("S3_ENDPOINT_URL")
     access = os.getenv("AWS_ACCESS_KEY_ID")
     secret = os.getenv("AWS_SECRET_ACCESS_KEY")
-    region = os.getenv("AWS_REGION", "auto")
+    region = os.getenv("AWS_REGION", "us-east-1")
     if not bucket:
         return None
     if not all((endpoint, access, secret)):

@@ -1,0 +1,26 @@
+# Environment secrets (commit only the .env.example templates)
+.env
+.env.*
+!.env.example
+
+# Local recordings and Python environments
+backend/.venv/
+backend/uploads/*
+!backend/uploads/.gitkeep
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Next.js and Node build artifacts
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+frontend/.vercel/
+frontend/next-env.d.ts
+*.tsbuildinfo
+
+# Local files
+.DS_Store
+*.pem
+*.log
